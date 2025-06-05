@@ -3,9 +3,99 @@
 <head>
   <meta charset="UTF-8" />
   <title>Community - Diamond Art</title>
-  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Pacifico&display=swap" rel="stylesheet">
+  <style>
+    body {
+      background: linear-gradient(135deg, #e0eafc 0%, #cfdef3 100%);
+      min-height: 100vh;
+      margin: 0;
+      font-family: 'Montserrat', Arial, sans-serif;
+      position: relative;
+      overflow-x: hidden;
+    }
+    nav {
+      background: rgba(44, 62, 80, 0.9);
+      padding: 1em 2em;
+      display: flex;
+      gap: 2em;
+      justify-content: center;
+      box-shadow: 0 2px 8px rgba(44, 62, 80, 0.2);
+    }
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: bold;
+      letter-spacing: 1px;
+      transition: color 0.2s;
+    }
+    nav a:hover {
+      color: #aee2ff;
+    }
+    main {
+      max-width: 700px;
+      margin: 3em auto;
+      background: rgba(255,255,255,0.85);
+      border-radius: 20px;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.07);
+      padding: 3em 2em 2em 2em;
+      position: relative;
+      z-index: 1;
+    }
+    h2 {
+      font-family: 'Pacifico', cursive;
+      font-size: 2.6em;
+      color: #5a7edc;
+      text-align: center;
+      margin-bottom: 0.2em;
+      text-shadow: 0 0 12px #b6ccfa, 0 0 5px #fff;
+      position: relative;
+    }
+    .sparkle {
+      display: inline-block;
+      vertical-align: middle;
+      width: 32px;
+      height: 32px;
+      background: url('https://upload.wikimedia.org/wikipedia/commons/7/7f/Diamond_icon.svg') center/contain no-repeat;
+      animation: sparkle 1.6s infinite alternate;
+      margin-left: 10px;
+    }
+    @keyframes sparkle {
+      0% { filter: brightness(1.1);}
+      100% { filter: brightness(2);}
+    }
+    p {
+      font-size: 1.2em;
+      color: #3d3d3d;
+      text-align: center;
+      margin-bottom: 2em;
+    }
+    /* Diamond Shapes */
+    .diamond {
+      position: absolute;
+      width: 60px;
+      height: 60px;
+      background: linear-gradient(135deg, #aee2ff 0%, #e1bee7 100%);
+      clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+      opacity: 0.25;
+      z-index: 0;
+    }
+    .diamond.d1 { top: 50px; left: 80px; width: 80px; height: 80px; background: linear-gradient(135deg, #b6ccfa, #b6f0fa);}
+    .diamond.d2 { top: 220px; right: 120px; width: 50px; height: 50px; background: linear-gradient(135deg, #ffe0f7, #aee2ff);}
+    .diamond.d3 { bottom: 80px; left: 25%; width: 70px; height: 70px; background: linear-gradient(135deg, #c3aed6, #e0eafc);}
+    .diamond.d4 { bottom: 140px; right: 70px; width: 60px; height: 60px; background: linear-gradient(135deg, #d1c4e9, #b6e0fa);}
+    /* Responsive */
+    @media (max-width: 700px) {
+      main { padding: 1.3em 0.5em;}
+      h2 { font-size: 2em;}
+    }
+  </style>
 </head>
 <body>
+  <!-- Decorative diamond shapes -->
+  <div class="diamond d1"></div>
+  <div class="diamond d2"></div>
+  <div class="diamond d3"></div>
+  <div class="diamond d4"></div>
   <nav>
     <a href="index.html">Home</a>
     <a href="login.html">Login</a>
@@ -13,7 +103,10 @@
     <a href="help.html">Help</a>
   </nav>
   <main>
-    <h2>Community Forum</h2>
+    <h2>
+      Community Forum
+      <span class="sparkle"></span>
+    </h2>
     <p>Connect with other creators, share your artwork, and spread positivity.</p>
   </main>
 </body>
